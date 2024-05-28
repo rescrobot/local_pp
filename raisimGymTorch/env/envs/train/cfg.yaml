@@ -1,7 +1,6 @@
 seed: 1
 record_video: yes
 logging: False  # wandb logging
-gitcommittest:
 
 # Environment configuration
 environment:
