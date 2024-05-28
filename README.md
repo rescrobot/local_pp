@@ -1,4 +1,5 @@
 # Intro
+alfkjsdflkjasdlfkjasdlfkjaslfkjfjjffjtestsetset
 Official implementation of **"Learning Forward Dynamics Model and Informed Trajectory Sampler for Safe Quadruped Navigation"** 
 *Robotics:Science and Systems (RSS 2022)*
 
