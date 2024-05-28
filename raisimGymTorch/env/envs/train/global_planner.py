@@ -8,7 +8,7 @@ except ImportError:
     # subdirectory of the parent directory called "py-bindings."
     from os.path import abspath, dirname, join
     import sys
-    OMPL_PYBIND_PATH = '' # TODO: PATH_SETUP_REQUIRED # ex) /home/me/Downloads/ompl-1.5.2/py-bindings
+    OMPL_PYBIND_PATH = '/home/res/raisim_ws/raisimLib/ompl-1.6.0/py-bindings' # TODO: PATH_SETUP_REQUIRED # ex) /home/me/Downloads/ompl-1.5.2/py-bindings
     if OMPL_PYBIND_PATH == '':
         raise ValueError("OMPL python binding path is not configured yet.")
     sys.path.insert(0, OMPL_PYBIND_PATH)

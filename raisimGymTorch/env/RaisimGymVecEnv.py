@@ -25,10 +25,10 @@ class RaisimGymVecEnv:
         self.obs_rms = RunningMeanStd(shape=[self.num_envs, self.num_obs])
         self.obs_rms_second = None
         self._reward = np.zeros(self.num_envs, dtype=np.float32)
-        self._done = np.zeros(self.num_envs, dtype=np.bool)
+        self._done = np.zeros(self.num_envs, dtype=bool)
         self._goal = np.zeros(2, dtype=np.float32)
         self._parallel_goal = np.zeros((self.num_envs, 2), dtype=np.float32)
-        self._parallel_collision = np.zeros(self.num_envs, dtype=np.bool)
+        self._parallel_collision = np.zeros(self.num_envs, dtype=bool)
         # self.rewards = [[] for _ in range(self.num_envs)]
 
         self.hSize = self.wrapper.getDepthImageHSize()
@@ -145,15 +145,15 @@ class RaisimGymVecEnv:
             return self._observation.copy(), not_normalized_obs.copy()  # two are same
 
     def reset(self):
-        self._done = np.zeros(self.num_envs, dtype=np.bool)
+        self._done = np.zeros(self.num_envs, dtype=bool)
         self._reward = np.zeros(self.num_envs, dtype=np.float32)
         self.wrapper.reset()
 
     def partial_reset(self, agentIDs):
         if len(agentIDs) != 0:
-            needed_reset = np.zeros(self.num_envs, dtype=np.bool)
+            needed_reset = np.zeros(self.num_envs, dtype=bool)
             needed_reset[agentIDs] = True
-            self._done = np.zeros(self.num_envs, dtype=np.bool)
+            self._done = np.zeros(self.num_envs, dtype=bool)
             self._reward = np.zeros(self.num_envs, dtype=np.float32)
             self.wrapper.partial_reset(needed_reset)
 
